@@ -5,11 +5,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MoviesService {
-  public moviesUrl:any = "./movie.ts";
+
+  private url = 'http://localhost:9090/api/movies';
 
   constructor(private http:HttpClient) { }
 
   getMovies(){
-    return this.http.get(this.moviesUrl);
+    return this.http.get(this.url);
   }
 }

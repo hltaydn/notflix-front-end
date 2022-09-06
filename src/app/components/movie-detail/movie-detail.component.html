@@ -1,0 +1,15 @@
+<p>movie-detail works!</p>
+
+  <iframe [src]="movie.url | safe"
+    title="Marvel" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+    gyroscope; picture-in-picture" allowfullscreen>
+  </iframe>
+
+  <div class="movie-details">
+    <span class="movie-title">{{movie.title | uppercase}}</span>
+    <p class="movie-type">{{movie.type}}</p>
+    <p class="movie-actors">Actors: {{movie.actors}}</p>
+    <span class="movie-rate">{{movie.rate}}</span>
+    <p class="movie-description">Description: {{movie.description}}</p>
+  </div>
