@@ -1,10 +1,11 @@
-<div class="movies-container"  >
-  <div class="movie" *ngFor ="let movie of movies">
-    <img class="movie-img" src="./../../../../assets/groot.jpg" alt="I am Groot.">
+<a [routerLink]="['/home/', movie.id]">
+  <div class="movie" (click)="onSelect(movie)">
+    <img class="movie-img" [src]="movie.photoPath | safe" alt="I am Groot.">
 
     <div class="movie-details">
       <span class="movie-title">{{movie.title | uppercase}}</span>
       <span class="movie-rate">{{movie.rate}}</span>
     </div>
   </div>
-</div>
+</a>
+

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { IMovies } from 'src/app/model.Movies';
+import { movieData } from 'src/app/movie';
 
 @Component({
   selector: 'app-movie-detail',
@@ -18,9 +20,13 @@ export class MovieDetailComponent implements OnInit {
     url:"https://www.youtube.com/embed/9l9Se-4QbdY?list=PLHPTxTxtC0ibVZrT2_WKWUl2SAxsKuKwx"
   };
 
-  constructor() { }
+
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    let id = parseInt(this.route.snapshot.params['id']);
+    this.movie = movieData[id-1];
   }
 
 }

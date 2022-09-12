@@ -1,1 +1,16 @@
-<app-movie></app-movie>
+<div class="search-box">
+  <input
+    type="text"
+    class="form-control me-2"
+    id="search-text"
+    aria-describedby="search-text"
+    [(ngModel)]="searchText"
+    (input)="filterList()"
+    placeholder="Enter text to search"
+    autofocus
+  />
+</div>
+
+<div class="movie-list">
+  <app-movie [movie]="movie" *ngFor="let movie of filteredMoviesData"></app-movie>
+</div>

@@ -1,10 +1,7 @@
-.movies-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  background-color: #eff3f7;
-  padding: 0px;
+a{
+  text-decoration: none;
 }
+
 .movie {
   width: 170px;
   margin: 5px;
@@ -17,14 +14,16 @@ iframe{
 }
 
 .movie-details{
+  height: 50px;
   display: flex;
   justify-content: space-between;
-  padding: 10px 5px;
+  padding: 5px;
 }
 
 .movie-title{
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
+  color: black;
 }
 
 .movie-type{
@@ -33,7 +32,15 @@ iframe{
 
 .movie-actors{}
 
-.movie-rate{}
+.movie-rate{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 30px;
+  height: 25px;
+  background-color:red;
+}
 
 .movie-description{
   font-size: 10px;

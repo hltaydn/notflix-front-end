@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/movies.service';
 import { movieData } from 'src/app/movie';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie',
@@ -9,12 +10,22 @@ import { movieData } from 'src/app/movie';
 })
 export class MovieComponent implements OnInit {
 
- public movies:any;
+@Input() movie:any;
 
-  constructor() { }
+movieId: any =0;
+
+  constructor(private activatedRoute: ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
-    this.movies=movieData;
+    this.movieId = this.activatedRoute
+    .paramMap
+    .subscribe(params => this.movieId = params.get('id'));
+
+  }
+
+  onSelect(movie:any){
+    this.router.navigate(['/home', movie.id]);
+    console.log("onSelect works with id: " + movie.id);
   }
 
 }

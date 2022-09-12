@@ -1,4 +1,31 @@
-<p>header works!</p>
 <div class="header">
-  <div class="brand">NotFlix</div>
+  <div class="brand">
+    <span style="color:black">Not</span>
+    <span style="color:red">Flix</span>
+  </div>
+
+
+    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+
+  <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form>
+          <div class="m-1">
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="m-1">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="m-2 btn-groups">
+            <button type="button" class="btn btn-primary me-1">Cancel</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
+

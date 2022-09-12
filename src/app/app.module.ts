@@ -10,20 +10,25 @@ import { MoviesService } from './movies.service';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { HeaderComponent } from './components/header/header.component';
-
+import { FilterPipe } from './FilterPipe';
+import { FormsModule } from '@angular/forms';
+import { AdminComponent } from './components/admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
     MovieComponent,
     SavePipe,
+    FilterPipe,
     MovieListComponent,
     MovieDetailComponent,
-    HeaderComponent
+    HeaderComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent]
