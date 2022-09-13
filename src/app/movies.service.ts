@@ -19,11 +19,4 @@ export class MoviesService {
 
     return this.http.get(this.url);
   }
-
-
-  // public getMovie(id: number) {
-  //   let movies = this.movies;
-  //   return movies.find((p: any) => p.id == id);
-  // }
-
 }
