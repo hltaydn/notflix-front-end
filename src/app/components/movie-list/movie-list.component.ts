@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { movieData } from 'src/app/movie';
 import { MoviesService } from 'src/app/movies.service';
 
 @Component({
@@ -8,7 +7,7 @@ import { MoviesService } from 'src/app/movies.service';
   styleUrls: ['./movie-list.component.css'],
 })
 export class MovieListComponent implements OnInit {
-  //  public movies: any= movieData;
+
 
 
   searchText: string = '';
@@ -30,7 +29,6 @@ export class MovieListComponent implements OnInit {
   ngOnInit() {
     this.moviesData = this.movieService.getMovies().subscribe((response:any) => {
       this.posts = response;
-
       this.filterList();
     });
   }
