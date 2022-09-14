@@ -13,6 +13,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FilterPipe } from './FilterPipe';
 import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './components/admin/admin.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginService } from './login.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,9 +30,10 @@ import { AdminComponent } from './components/admin/admin.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [MoviesService],
+  providers: [MoviesService,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
