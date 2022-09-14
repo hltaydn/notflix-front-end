@@ -14,6 +14,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FilterPipe } from './FilterPipe';
 import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './components/admin/admin.component';
+import { LoginService } from './login.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
@@ -31,10 +32,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule,
     ReactiveFormsModule
   ],
-  providers: [MoviesService],
+  providers: [MoviesService,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

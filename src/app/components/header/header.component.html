@@ -7,27 +7,47 @@
   </div>
 
 
-    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+  <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
 
   <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog" id="loginModal">
       <div class="modal-content">
-        <form>
+        <form [formGroup]="loginForm">
           <div class="m-1">
-            <label for="exampleInputEmail1" class="form-label">Username</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="username" class="form-label">Username</label>
+            <input formControlName="username" type="text" class="form-control" id="username" aria-describedby="emailHelp">
           </div>
           <div class="m-1">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="password" class="form-label">Password</label>
+            <input formControlName="password" type="password" class="form-control" id="password">
           </div>
           <div class="m-2 btn-groups">
-            <button type="button" class="btn btn-primary me-1">Cancel</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-primary me-1" data-bs-dismiss="modal" >Cancel</button>
+            <button class="btn btn-primary" data-bs-dismiss="modal" (click)="getUser()">Submit</button>
           </div>
+
+          <div *ngIf="loading">loading...</div>
+
+          <div *ngIf="errorMessage" class="alert alert-warning">
+            <strong>Warning!</strong> {{errorMessage | json}}
+          </div>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users;">
+                <td>{{user.username}}</td>
+                <td>{{user.password}}</td>
+                <td>{{user.fullName}}</td>
+              </tr>
+            </tbody>
+          </table>
+
         </form>
       </div>
     </div>
   </div>
 </div>
-
