@@ -6,3 +6,17 @@
   padding: 0px;
   margin: 10px;
 }
+
+.search-box{
+  position: relative;
+  display: flex;
+}
+
+.search-box input{
+  position: absolute;
+  width: 300px;
+  margin-left: auto;
+  top: -57px;
+  right: 40%;
+  border: 2px solid black;
+}

@@ -14,7 +14,7 @@ iframe{
 }
 
 .movie-details{
-  height: 50px;
+  height: 40px;
   display: flex;
   justify-content: space-between;
   padding: 5px;
@@ -25,12 +25,6 @@ iframe{
   font-weight: 600;
   color: black;
 }
-
-.movie-type{
-
-}
-
-.movie-actors{}
 
 .movie-rate{
   display: flex;
@@ -48,5 +42,5 @@ iframe{
 
 .movie-img{
   width: 100%;
-  height: auto;
+  height: 240px;
 }

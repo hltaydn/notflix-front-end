@@ -12,9 +12,18 @@ border-bottom: 2px solid red;
   font-weight: 700;
 }
 
+.brand a{
+  text-decoration: none;
+}
+
 .search-box{
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 5px 20px;
+}
+
+.btn-dark{
+  width: 90px !important;
+  margin-right: 15px;
 }

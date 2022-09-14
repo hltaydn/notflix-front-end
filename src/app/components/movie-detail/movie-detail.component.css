@@ -3,18 +3,59 @@ iframe{
   height: 70vh;
 }
 
-.movie-details{}
+.movie-details{
+  background-color: black;
+  color: white;
+}
 
 .movie-video{}
 
-.movie-info{}
+.movie-detail-footer{
+  display: flex;
+  justify-content: center;
+  margin-left: 200px;
+}
 
-.movie-title{}
+.movie-info{
+  flex: 2;
+  margin:20px 10px;
+}
 
-.movie-type{}
+.movie-title{
+  font-weight: 700;
+}
 
-.movie-actors{}
+.movie-type{
+  display: block;
+}
 
-.movie-rate{}
+.movie-actors{
+  opacity: 0.7;
+}
 
-.movie-description{}
+.movie-rate{
+  font-weight: 600;
+  color: yellow;
+}
+
+.movie-description{
+  opacity: 0.7;
+}
+
+.movie-info p{
+  display: inline;
+}
+
+.backHome-btn{
+  flex: 1;
+  /* background-color: bisque; */
+  display: flex;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.btn-danger{
+  height: 40px;
+  margin-left: auto;
+  margin-right: 10px;
+}

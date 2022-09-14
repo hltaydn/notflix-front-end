@@ -7,13 +7,24 @@
     </iframe>
   </div>
 
-
-<div class="movie-info">
-  <span class="movie-title">{{movie.title | uppercase}}</span>
-  <p class="movie-type">{{movie.type}}</p>
-  <p class="movie-actors">Actors: {{movie.actors}}</p>
-  <span class="movie-rate">{{movie.rate}}</span>
-  <p class="movie-description">Description: {{movie.description}}</p>
+<div class="movie-detail-footer">
+  <div class="movie-info ">
+    <span class="movie-title">{{movie.title | uppercase}}</span>
+    <span class="movie-rate ms-3">{{movie.rate}}</span>
+    <span class="movie-type">{{movie.type}}</span>
+    <div>
+      <span class="movie-actors">Actors: </span>
+      <span class="movie-actors-names">{{movie.actors}}</span>
+    </div>
+    <div>
+      <span class="movie-description">Description: </span>
+      <p class="movie-description-text">{{movie.description}}</p>
+    </div>
+  </div>
+  <div class="backHome-btn">
+    <a [routerLink]="['/home']" class="btn btn-danger">Back Home</a>
+  </div>
 </div>
+
 
 </div>
