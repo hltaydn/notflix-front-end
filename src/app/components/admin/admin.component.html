@@ -1,1 +1,70 @@
-<p>admin works!</p>
+<!-- <p>admin works!</p> -->
+
+<ng-template #content let-modal>
+
+
+    
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">New Movie</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <form  [formGroup]="movieForm" >
+        <div class="mb-3">
+          <label for="title">Title</label>
+          <div class="title">
+            <input id="title" class="form-control" placeholder="Enter a text"  input="text" name="title" formControlName="title" required>
+          </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="actors">Actors</label>
+            <div class="actors">
+              <input id="actors" class="form-control" placeholder="Enter a text"  input="text" name="actors" formControlName="actors" required>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="rate">Rate</label>
+            <div class="rate">
+              <input id="rate" class="form-control" placeholder="Enter a number"  input="number" name="rate" formControlName="rate" required>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="description">Description</label>
+            <div class="description">
+              <input id="description" class="form-control" placeholder="Enter a text" input="text" name="description" formControlName="description" required>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="type">Type</label>
+            <div class="type">
+              <input id="type" class="form-control" placeholder="Enter a text"  input="text" name="type" formControlName="type" required>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="photoPath">Photo Path</label>
+            <div class="photoPath">
+              <input id="photoPath" class="form-control" placeholder="Enter a text" input="text" name="photoPath" formControlName="photoPath" required>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="url">Url</label>
+            <div class="url">
+              <input id="url" class="form-control" placeholder="Enter an url"  input="text" name="url" formControlName="url" required>
+            </div>
+          </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="close()" >Save</button>
+    </div>
+            
+  </ng-template>
+  
+  <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Add a movie</button>
+  
