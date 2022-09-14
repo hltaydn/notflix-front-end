@@ -4,7 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/login.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ModalDirective } from 'ngx-bootstrap/modal';
+
 
 
 
