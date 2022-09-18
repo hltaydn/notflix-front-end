@@ -33,10 +33,10 @@ export class HeaderComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
   }
 
-  
+
   public getUser() {
     const username = this.loginForm.value['username'];
     const password = this.loginForm.value['password']
@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit {
           {
             alert("succes");
             this.router.navigate(['admin']);
-           
+
 
           }else{
             alert("not succes");
@@ -70,7 +70,7 @@ export class HeaderComponent implements OnInit {
           this.loading = false;
         },
         () => {                                   //complete() callback
-          console.error('Request completed')      //This is actually not needed 
+          console.error('Request completed')      //This is actually not needed
           this.loading = false;
         })
   }
@@ -82,7 +82,7 @@ export class HeaderComponent implements OnInit {
 
   // // this.loginService(username, password) {
   // //   this.loginService.sendLogin(username, password)
-  // // } 
+  // // }
 
   // }
 

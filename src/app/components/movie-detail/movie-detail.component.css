@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Lobster&family=Roboto:wght@500&display=swap');
+
+.brand{
+  position: relative;
+  background-color:transparent;
+}
+
+.brand a{
+  text-decoration: none;
+}
+
+.brand a span{
+  font-family: 'Lobster', cursive;
+}
+
+.brand-logo{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
 iframe{
   width: 100%;
   height: 70vh;
@@ -6,6 +29,9 @@ iframe{
 .movie-details{
   background-color: black;
   color: white;
+
+
+
 }
 
 .movie-video{}
@@ -19,27 +45,42 @@ iframe{
 .movie-info{
   flex: 2;
   margin:20px 10px;
+  font-family: 'Roboto','Fjalla One', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .movie-title{
+  font-size: 18px;
   font-weight: 700;
+  font-family: 'Roboto','Fjalla One', sans-serif;
+
 }
 
 .movie-type{
   display: block;
+  font-family: 'Roboto','Fjalla One', sans-serif;
 }
 
 .movie-actors{
   opacity: 0.7;
 }
 
+.movie-actors-names{
+  font-family: 'Roboto','Fjalla One', sans-serif;
+}
+
 .movie-rate{
   font-weight: 600;
   color: yellow;
+  font-family: 'Roboto','Fjalla One', sans-serif;
 }
 
 .movie-description{
   opacity: 0.7;
+}
+
+.movie-description-text{
+  font-family: 'Roboto','Fjalla One', sans-serif;
 }
 
 .movie-info p{
@@ -58,4 +99,5 @@ iframe{
   height: 40px;
   margin-left: auto;
   margin-right: 10px;
+  font-family: 'Roboto','Fjalla One', sans-serif;
 }

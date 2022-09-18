@@ -3,37 +3,46 @@ a{
 }
 
 .movie {
-  width: 170px;
-  margin: 5px;
-  background-color: rgba(255, 255, 255, 0.8);
+  width: 220px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: #161a1d;
+  border-radius: 5px;
+  box-shadow: 0 4px 5px 3px rgba(0, 0, 0, 0.7);
 }
 
-iframe{
-  width: 300px;
-  height: 150px;
+.movie:hover{
+
+  border: 1px solid white;
 }
+
+
 
 .movie-details{
-  height: 40px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
-  padding: 5px;
 }
 
 .movie-title{
-  font-size: 10px;
-  font-weight: 600;
-  color: black;
+  font-size: 14px;
+  font-weight: 700;
+  color: #f5f3f4;
+  margin-top: 8px;
+  margin-left: 8px;
 }
 
 .movie-rate{
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 8px;
+  margin-right: 8px;
+  border-radius: 4px;
   color: white;
   width: 30px;
   height: 25px;
-  background-color:red;
+  background-color:#660708;
 }
 
 .movie-description{
@@ -41,6 +50,7 @@ iframe{
 }
 
 .movie-img{
+  border-radius: 5px 5px 0 0;
   width: 100%;
-  height: 240px;
+  height: 320px;
 }
