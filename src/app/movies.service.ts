@@ -1,6 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+export class Movie{
+  id:number=0
+  title!: string;
+  actors!: string;
+  rate!: number;
+  type!: string;
+  description!: string;
+  photoPath!: string;
+  url!: string;
+  
+}
+
 @Injectable({
   providedIn: 'root',
 })

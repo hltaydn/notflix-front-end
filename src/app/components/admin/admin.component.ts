@@ -1,6 +1,8 @@
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Movie } from 'src/app/movies.service';
 
 @Component({
   selector: 'app-admin',
@@ -8,6 +10,8 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
+
+  private newMovie:Movie = new Movie();
 
   public movieForm:FormGroup;
   private title:FormControl;
@@ -17,10 +21,18 @@ export class AdminComponent {
   private type:FormControl;
   private photoPath:FormControl;
   private url:FormControl;
+
+  private header: any = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
+  
   
   closeResult = '';
 
-  constructor(private admin: NgbModal,public formBuilder:FormBuilder) {
+  constructor(private admin: NgbModal,public formBuilder:FormBuilder,
+    private http:HttpClient) {
 
     this.title=new FormControl('',[Validators.required])
     this.actors=new FormControl('',[Validators.required])
@@ -65,8 +77,18 @@ export class AdminComponent {
     this.movieForm.reset()
   }
 
-  createMovie()
+  addMovie()
   {   
-      console.log(this.movieForm.value)
-      this.movieForm.reset()
+    const apiUrl = 'http://localhost:9090/api/movies';
+      
+    this.newMovie = <Movie>this.movieForm.value;
+    this.newMovie.id = 0;
+
+
+    console.log(this.newMovie);
+    const abc = JSON.stringify(this.newMovie);
+    console.log(abc)
+    this.http.post(apiUrl, abc,{...this.header}).subscribe((res: any) => { 
+      console.log(res)
+    })
   }}
