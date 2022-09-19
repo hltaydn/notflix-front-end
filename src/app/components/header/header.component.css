@@ -1,20 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Lobster&family=Roboto:wght@500&display=swap');
+
 .header{
-margin: 0 5px;
+/* margin: 0 5px; */
 display: flex;
 align-items: center;
 justify-content: space-between;
-border-bottom: 2px solid red;
+/* background-color: #f5f3f4; */
+background-color: #63170d;
+/* border-bottom: 2px solid #161a1d; */
 }
 
 .brand{
-  margin: 5px 20px;
-  font-size: 44px;
+  margin-top: 20px ;
+  margin-left: 30px;
+  font-size: 54px;
   font-weight: 700;
 }
 
-.search-box{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 5px 20px;
+.brand a{
+  text-decoration: none;
+
+}
+
+.brand a span{
+  /* font-family: 'Alex Brush', sans-serif; */
+  font-family: 'Lobster', cursive;
+  /* font-family: "Sofia", sans-serif; */
+  /* font-family: 'Fjalla One', sans-serif; */
+}
+
+.btn-dark{
+  width: 90px !important;
+  margin-right: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.btn-dark:hover{
+  color: black;
+  background-color: #fff;
+  box-shadow: 0 4px 5px 3px rgba(251, 250, 250, 0.7);
 }

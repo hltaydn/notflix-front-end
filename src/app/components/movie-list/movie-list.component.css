@@ -2,7 +2,26 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: #eff3f7;
-  padding: 0px;
-  margin: 10px;
+  background-color: #63170d;
+  padding: 5px;
+  margin: 0px;
+}
+
+.search-box{
+  position: relative;
+  display: flex;
+}
+
+.search-box input{
+  position: absolute;
+  width: 300px;
+  margin-left: auto;
+  top: -57px;
+  right: 40%;
+  border: 2px solid black;
+  background-color: #fdf0d5;
+}
+
+.search-box input:focus{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
 }
