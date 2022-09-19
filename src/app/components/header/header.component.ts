@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { User } from 'src/app/User';
+import { User } from 'src/app/user';
 import { FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/login.service';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -13,7 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
  // @ViewChild('loginModal') public loginModal:ModalDirective ;
 
   public username: string = '';
@@ -31,11 +31,6 @@ export class HeaderComponent implements OnInit {
     username: ['', [Validators.required]],
     password: ['', [Validators.required]],
   });
-
-  ngOnInit(): void {
-
-  }
-
 
   public getUser() {
     const username = this.loginForm.value['username'];
