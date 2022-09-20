@@ -7,7 +7,7 @@
   </div>
 
 
-  
+
 
   <button type="button" *ngIf="currentUrl==='/home'" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
   <button type="button" *ngIf="currentUrl==='/admin'" class="btn btn-dark" (click)="loggedOut()">Logout</button>
@@ -27,29 +27,16 @@
           <div class="m-2 btn-groups">
             <button type="button" class="btn btn-primary me-1" data-bs-dismiss="modal" >Cancel</button>
             <button class="btn btn-primary" data-bs-dismiss="modal" (click)="getUser()">Submit</button>
-            
+
           </div>
 
-          <!-- <div><ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert></div>
+
           <div *ngIf="loading">loading...</div>
 
           <div *ngIf="errorMessage" class="alert alert-warning">
             <strong>Warning!</strong> {{errorMessage | json}}
-          </div> -->
-          <!-- <table class='table'>
-            <thead>
-              <tr>
-                <th>Name</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let user of users;">
-                <td>{{user.username}}</td>
-                <td>{{user.password}}</td>
-                <td>{{user.fullName}}</td>
-              </tr>
-            </tbody>
-          </table> -->
+          </div>
+
 
         </form>
       </div>

@@ -19,7 +19,22 @@
   <div class="movie-detail-footer">
     <div class="movie-info">
       <span class="movie-title">{{movie.title | uppercase}}</span>
-      <span class="movie-rate ms-3">{{movie.rate}}</span>
+      <span class="movie-rate ms-3">{{newRate}}</span>
+      <div class="movie-vote">
+
+        <fieldset class="rating" ng-controller="radioInputs">
+          <input ng-checked="checkMe" type="radio" id="star10" name="rating" value="10" (click)="getStar(10)"/><label class = "full" for="star10" title="Awesome - 5 stars"></label>
+          <input ng-checked="checkMe" type="radio" id="star9" name="rating" value="9" (click)="getStar(9)"/><label class = "full" for="star9" title="Pretty good - 4 stars"></label>
+          <input ng-checked="checkMe" type="radio" id="star8" name="rating" value="8" (click)="getStar(8)" /><label class = "full" for="star8" title="Meh - 3 stars"></label>
+          <input ng-checked="checkMe" type="radio" id="star7" name="rating" value="7" (click)="getStar(7)" /><label class = "full" for="star7" title="Kinda bad - 2 stars"></label>
+          <input ng-checked="checkMe" type="radio" id="star6" name="rating" value="6" (click)="getStar(6)"/><label class = "full" for="star6" title="Sucks big time - 1 star"></label>
+          <input ng-checked="checkMe" type="radio" id="star5" name="rating" value="5" (click)="getStar(5)" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+          <input ng-checked="checkMe" type="radio" id="star4" name="rating" value="4" (click)="getStar(4)"/><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+          <input ng-checked="checkMe" type="radio" id="star3" name="rating" value="3" (click)="getStar(3)"/><label class = "full" for="star3" title="Meh - 3 stars"></label>
+          <input ng-checked="checkMe" type="radio" id="star2" name="rating" value="2" (click)="getStar(2)"/><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+          <input ng-checked="checkMe" type="radio" id="star1" name="rating" value="1" (click)="getStar(1)"/><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+      </fieldset>
+      </div>
       <span class="movie-type">{{movie.type}}</span>
       <div>
         <span class="movie-actors">Actors: </span>

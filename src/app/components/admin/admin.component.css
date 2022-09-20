@@ -16,10 +16,20 @@
     position: absolute;
     width: 300px;
     margin-left: auto;
-    top: -120px;
+    top: -121px;
     right: 100px;
     border: 2px solid black;
     background-color: #fdf0d5;
+  }
+
+
+  .user{
+    position: absolute;
+    width: 300px;
+    margin-left: auto;
+    top: 107px;
+    right: 14px;
+    background-color: #f8f9fa;
   }
   
   .search-box input:focus{

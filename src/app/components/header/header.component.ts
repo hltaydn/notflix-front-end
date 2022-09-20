@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { User } from 'src/app/User';
+import { User } from 'src/app/user';
 import { FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/login.service';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -13,7 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
  // @ViewChild('loginModal') public loginModal:ModalDirective ;
 
   public username: string = '';
@@ -25,6 +25,7 @@ export class HeaderComponent implements OnInit {
   errorMessage: any;
 
 
+
   constructor(private loginService: LoginService,
     private fb: FormBuilder,private activatedRoute: ActivatedRoute,private router:Router) { }
 
@@ -33,21 +34,22 @@ export class HeaderComponent implements OnInit {
     password: ['', [Validators.required]],
   });
 
+
   public loggedIn: boolean=false;
 
   ngOnInit(): void {
-    
-    this.loggedIn = Boolean(localStorage.getItem("loggedIn"));
+
+    //this.loggedIn = Boolean(localStorage.getItem("loggedIn"));
     this.currentUrl = this.router.url;
     //console.log(this.router.url);
-    
+
   }
 
 
   public getUser() {
     const username = this.loginForm.value['username'];
     const password = this.loginForm.value['password'];
-    
+
     this.loading = true;
     this.errorMessage = "";
     this.loginService.getUser(this.username, this.password)
@@ -56,14 +58,14 @@ export class HeaderComponent implements OnInit {
           console.log(response[0].username + "" + response[0].password);
           if(response[0].username == username && response[0].password==password)
           {
-            alert("succes");
+           
             localStorage.setItem("loggedIn", "true");
             this.router.navigate(['admin']);
 
 
           }else{
             localStorage.setItem("loggedIn", "false");
-            
+
             alert("Your credentials are not correct. You should check your credentials!");
           }
 
