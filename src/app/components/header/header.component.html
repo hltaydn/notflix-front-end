@@ -7,7 +7,10 @@
   </div>
 
 
-  <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+  
+
+  <button type="button" *ngIf="currentUrl==='/home'" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+  <button type="button" *ngIf="currentUrl==='/admin'" class="btn btn-dark" (click)="loggedOut()">Logout</button>
 
   <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" id="loginModal">
@@ -24,14 +27,16 @@
           <div class="m-2 btn-groups">
             <button type="button" class="btn btn-primary me-1" data-bs-dismiss="modal" >Cancel</button>
             <button class="btn btn-primary" data-bs-dismiss="modal" (click)="getUser()">Submit</button>
+            
           </div>
 
+          <!-- <div><ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert></div>
           <div *ngIf="loading">loading...</div>
 
           <div *ngIf="errorMessage" class="alert alert-warning">
             <strong>Warning!</strong> {{errorMessage | json}}
-          </div>
-          <table class='table'>
+          </div> -->
+          <!-- <table class='table'>
             <thead>
               <tr>
                 <th>Name</th>
@@ -44,7 +49,7 @@
                 <td>{{user.fullName}}</td>
               </tr>
             </tbody>
-          </table>
+          </table> -->
 
         </form>
       </div>

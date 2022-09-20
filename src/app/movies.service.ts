@@ -10,7 +10,7 @@ export class Movie{
   description!: string;
   photoPath!: string;
   url!: string;
-  
+
 }
 
 @Injectable({
@@ -18,7 +18,7 @@ export class Movie{
 })
 export class MoviesService {
 
-  private url = 'http://localhost:9090/api/movies';
+  private url = 'http://localhost:9090/api/moviesWithRating';
 
   movies: any;
 

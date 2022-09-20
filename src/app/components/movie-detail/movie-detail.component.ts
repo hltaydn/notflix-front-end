@@ -20,6 +20,11 @@ export class MovieDetailComponent implements OnInit {
     url: 'https://www.youtube.com/embed/9l9Se-4QbdY?list=PLHPTxTxtC0ibVZrT2_WKWUl2SAxsKuKwx',
   };
 
+  currentRate: number =0;
+  numberOfRating: number =0;
+  newRate: number =0;
+
+
   constructor(
     private route: ActivatedRoute,
     private movieService: MoviesService
@@ -30,11 +35,21 @@ export class MovieDetailComponent implements OnInit {
 
     this.movieService.getMovies().subscribe((p) => {
       this.movie = Object.values(p).find((item) => item.id == id);
+
+      this.currentRate = this.movie.rate;
+      this.newRate =this.currentRate;
+      this.numberOfRating=this.movie.numberOfRate;
     });
 
   }
 
-  getStar(number:number){
-console.log("star: "+ number);
+  Rating(num: number){
+    this.newRate=((this.currentRate * this.numberOfRating) + num) / (this.numberOfRating +1);
+    this.newRate=Math.round(this.newRate * 10 ) / 10;
   }
+
+  getStar(number:number){
+    this.Rating(number);
+  }
+  
 }

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Movie } from 'src/app/movies.service';
+import { MoviesService } from 'src/app/movies.service';
 
 @Component({
   selector: 'app-admin',
@@ -10,6 +11,14 @@ import { Movie } from 'src/app/movies.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
+  searchText: string = '';
+
+  public posts: any;
+
+  public moviesData: any;
+
+  public filteredMoviesData: any;
+
 
   private newMovie:Movie = new Movie();
 
@@ -31,8 +40,9 @@ export class AdminComponent {
   
   closeResult = '';
 
-  constructor(private admin: NgbModal,public formBuilder:FormBuilder,
+  constructor(private movieService: MoviesService,private admin: NgbModal,public formBuilder:FormBuilder,
     private http:HttpClient) {
+
 
     this.title=new FormControl('',[Validators.required])
     this.actors=new FormControl('',[Validators.required])
@@ -51,7 +61,18 @@ export class AdminComponent {
       url:this.url
     })
    }
-   
+   filterList() {
+    this.filteredMoviesData = this.posts.filter((post: { title: string }) =>
+      post.title.toLowerCase().includes(this.searchText.toLowerCase())
+    );
+  }
+
+  ngOnInit() {
+    this.moviesData = this.movieService.getMovies().subscribe((response:any) => {
+      this.posts = response;
+      this.filterList();
+    });
+  }
 
   open(content: any) {
     this.admin.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result: any) => {

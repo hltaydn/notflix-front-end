@@ -1,5 +1,5 @@
 <!-- <p>admin works!</p> -->
-
+<app-header></app-header>
 <ng-template #content let-modal>
 
 
@@ -61,10 +61,29 @@
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark"  (click)="addMovie()" >Save</button>
+        <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss('Cross click')" data-bs-dismiss="modal" >Close</button>
+        <button type="button" class="btn btn-outline-dark"  (click)="addMovie(); modal.dismiss('Cross click')" >Save</button>
     </div>
             
   </ng-template>
   
   <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Add a movie</button>
+
+  <div class="search-box">
+  <input
+    type="text"
+    class="form-control me-2"
+    id="search-text"
+    aria-describedby="search-text"
+    [(ngModel)]="searchText"
+    (input)="filterList()"
+    placeholder="Enter text to search"
+    autofocus
+  />
+</div>
+
+<div class="movie-list">
+  <app-movie [movie]="movie" *ngFor="let movie of filteredMoviesData"></app-movie>
+</div>
+
   

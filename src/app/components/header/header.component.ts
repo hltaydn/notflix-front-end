@@ -18,6 +18,7 @@ export class HeaderComponent {
 
   public username: string = '';
   public password: string = '';
+  public currentUrl:string ='/home'
 
   users: User[] = [];
   loading: boolean = false;
@@ -32,9 +33,21 @@ export class HeaderComponent {
     password: ['', [Validators.required]],
   });
 
+  public loggedIn: boolean=false;
+
+  ngOnInit(): void {
+
+    this.loggedIn = Boolean(localStorage.getItem("loggedIn"));
+    this.currentUrl = this.router.url;
+    //console.log(this.router.url);
+
+  }
+
+
   public getUser() {
     const username = this.loginForm.value['username'];
-    const password = this.loginForm.value['password']
+    const password = this.loginForm.value['password'];
+
     this.loading = true;
     this.errorMessage = "";
     this.loginService.getUser(this.username, this.password)
@@ -44,11 +57,14 @@ export class HeaderComponent {
           if(response[0].username == username && response[0].password==password)
           {
             alert("succes");
+            localStorage.setItem("loggedIn", "true");
             this.router.navigate(['admin']);
 
 
           }else{
-            alert("not succes");
+            localStorage.setItem("loggedIn", "false");
+
+            alert("Your credentials are not correct. You should check your credentials!");
           }
 
 
@@ -69,7 +85,11 @@ export class HeaderComponent {
           this.loading = false;
         })
   }
+  loggedOut(){
+    localStorage.setItem("loggedIn", "false");
+    this.router.navigate(['home']);
 
+  }
   // ngOnInit(): void {
   //   this.user = this.loginService.getUser().subscribe((response:any) => {});
   //   console.log(this.user);

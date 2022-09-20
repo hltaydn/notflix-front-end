@@ -79,14 +79,16 @@ iframe{
 }
 
 .movie-vote{
-  display: inline;
-  margin-left: 10px;
-  border: 1px solid blue;
+  display: inline-block;
+  margin-left: 5px;
+  /* border: 1px solid blue; */
 }
+
+
+
 fieldset{
   margin-left: 5px;
-  margin-top: 5px;
-  margin-bottom: -15px;
+  margin-bottom: -7px;
 }
 
 fieldset, label {
@@ -102,7 +104,7 @@ fieldset, label {
   border: none;
   /* float: left; */
   display: inline;
-  border: 1px solid white;
+  /* border: 1px solid white; */
 }
 
 .rating > input { display: none; }
