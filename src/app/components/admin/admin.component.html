@@ -61,7 +61,8 @@
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark"  (click)="addMovie()" >Save</button>
+        <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss('Cross click')" data-bs-dismiss="modal" >Close</button>
+        <button type="button" class="btn btn-outline-dark"  (click)="addMovie(); modal.dismiss('Cross click')" >Save</button>
     </div>
             
   </ng-template>
