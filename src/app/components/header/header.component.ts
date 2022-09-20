@@ -25,6 +25,7 @@ export class HeaderComponent {
   errorMessage: any;
 
 
+
   constructor(private loginService: LoginService,
     private fb: FormBuilder,private activatedRoute: ActivatedRoute,private router:Router) { }
 
@@ -33,11 +34,12 @@ export class HeaderComponent {
     password: ['', [Validators.required]],
   });
 
+
   public loggedIn: boolean=false;
 
   ngOnInit(): void {
 
-    this.loggedIn = Boolean(localStorage.getItem("loggedIn"));
+    //this.loggedIn = Boolean(localStorage.getItem("loggedIn"));
     this.currentUrl = this.router.url;
     //console.log(this.router.url);
 
@@ -56,7 +58,7 @@ export class HeaderComponent {
           console.log(response[0].username + "" + response[0].password);
           if(response[0].username == username && response[0].password==password)
           {
-            alert("succes");
+           
             localStorage.setItem("loggedIn", "true");
             this.router.navigate(['admin']);
 
