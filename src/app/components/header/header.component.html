@@ -30,7 +30,12 @@
             
           </div>
 
-          <!-- <div><ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert></div>
+           <!-- <div><ngb-alert type='danger'>"Your credentials are not correct. You should check your credentials!"</ngb-alert></div> -->
+
+           <!-- <ngb-alert [dismissible]="false" 
+             type='success'>
+    <strong>GeeksforGeeks</strong>
+  </ngb-alert> -->
           <div *ngIf="loading">loading...</div>
 
           <div *ngIf="errorMessage" class="alert alert-warning">

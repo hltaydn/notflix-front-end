@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
   users: User[] = [];
   loading: boolean = false;
   errorMessage: any;
+  
 
 
   constructor(private loginService: LoginService,
@@ -33,11 +34,12 @@ export class HeaderComponent implements OnInit {
     password: ['', [Validators.required]],
   });
 
+
   public loggedIn: boolean=false;
 
   ngOnInit(): void {
     
-    this.loggedIn = Boolean(localStorage.getItem("loggedIn"));
+    //this.loggedIn = Boolean(localStorage.getItem("loggedIn"));
     this.currentUrl = this.router.url;
     //console.log(this.router.url);
     
