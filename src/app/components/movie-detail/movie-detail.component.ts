@@ -33,4 +33,8 @@ export class MovieDetailComponent implements OnInit {
     });
 
   }
+
+  getStar(number:number){
+console.log("star: "+ number);
+  }
 }
